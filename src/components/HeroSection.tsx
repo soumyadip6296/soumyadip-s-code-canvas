@@ -2,6 +2,7 @@ import React from 'react';
 import { Download, ChevronDown, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import profileImage from '@/assets/soumyadip-profile.jpg';
+import resumeURL from '@/assets/Soumyadip_Mandal_Resume.pdf';
 
 export const HeroSection = () => {
   const scrollToContact = () => {
@@ -12,8 +13,13 @@ export const HeroSection = () => {
   };
 
   const downloadResume = () => {
-    // Placeholder for resume download
-    alert('Resume download feature will be implemented');
+    const link = document.createElement('a');
+    link.href = resumeURL;
+    link.download = 'Soumyadip_Mandal_Resume.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
   };
 
   return (
