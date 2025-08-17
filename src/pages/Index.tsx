@@ -1,5 +1,4 @@
 import React from 'react';
-import { ThemeToggle } from '@/components/ThemeToggle';
 import { Navigation } from '@/components/Navigation';
 import { HeroSection } from '@/components/HeroSection';
 import { AboutSection } from '@/components/AboutSection';
@@ -14,7 +13,6 @@ import { ContactSection } from '@/components/ContactSection';
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <ThemeToggle />
       <Navigation />
       
       <main>
