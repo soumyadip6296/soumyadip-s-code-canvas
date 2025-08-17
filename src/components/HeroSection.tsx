@@ -1,7 +1,7 @@
 import React from 'react';
 import { Download, ChevronDown, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import profileImage from '@/assets/soumyadip-profile.jpg';
+import SoumyadipImage from '@/assets/Soumyadip.jpg';
 import resumeURL from '@/assets/Soumyadip_Mandal_Resume.pdf';
 
 export const HeroSection = () => {
@@ -26,9 +26,9 @@ export const HeroSection = () => {
     <section id="home" className="min-h-screen flex items-center justify-center hero-gradient px-4 relative">
       <div className="container mx-auto text-center animate-fade-in">
         <div className="mb-8 animate-bounce-in">
-          <img 
-            src={profileImage} 
-            alt="Soumyadip Mandal" 
+          <img
+            src={SoumyadipImage}
+            alt="Soumyadip Mandal"
             className="w-48 h-48 mx-auto rounded-full object-cover shadow-large hover:shadow-glow-primary transition-all duration-300 hover:scale-105"
           />
         </div>
