@@ -2,8 +2,6 @@ import React from 'react';
 import { Download, ChevronDown, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import SoumyadipImage from '@/assets/Soumyadip.jpg';
-import resumeURL from '@/assets/Soumyadip_Mandal_Resume.pdf';
-import resumeCopyURL from '@/assets/Soumyadip Mandal Resume copy.pdf';
 
 export const HeroSection = () => {
   const scrollToContact = () => {
@@ -13,11 +11,12 @@ export const HeroSection = () => {
     }
   };
 
-  // helper to download any asset URL with a filename
-  const downloadFile = (url: string, filename: string) => {
+  // Use public URL to download the resume (place Soumyadip_Mandal_Resume.pdf in the public root)
+  const downloadResume = () => {
+    const url = '/Soumyadip_Mandal_Resume.pdf';
     const link = document.createElement('a');
     link.href = url;
-    link.download = filename;
+    link.download = 'Soumyadip_Mandal_Resume.pdf';
     link.target = '_blank';
     document.body.appendChild(link);
     link.click();
@@ -48,13 +47,9 @@ export const HeroSection = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-slide-up" style={{ animationDelay: '0.6s' }}>
-          <Button variant="hero" size="lg" onClick={() => downloadFile(resumeURL, 'Soumyadip_Mandal_Resume.pdf')} className="group">
+          <Button variant="hero" size="lg" onClick={downloadResume} className="group">
             <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
             Download Resume
-          </Button>
-          <Button variant="secondary" size="lg" onClick={() => downloadFile(resumeCopyURL, 'Soumyadip_Mandal_Resume_copy.pdf')} className="group">
-            <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
-            Download Resume (Copy)
           </Button>
           <Button variant="accent" size="lg" onClick={scrollToContact} className="group">
             <Mail className="mr-2 h-5 w-5 group-hover:animate-bounce" />
